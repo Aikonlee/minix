@@ -1,0 +1,17 @@
+#define UC_FLAGS 0
+#define UC_LINK 4
+#define MAGIC 628
+#define DI 52
+#define SI 56
+#define BP 60
+#define AX 64
+#define BX 68
+#define CX 72
+#define DX 76
+#define PC 84
+#define SP 80
+#define EFAULT 14
+#define EINVAL 22
+#define MCF_MAGIC 12648430
+#define _UC_IGNFPU 131072
+#define _UC_IGNSIGM 262144

@@ -5,6 +5,12 @@
 GCC_LANGUAGES=c c++ objc
 MODULE=			gcc4
 
+# Host compilers default to C++17+, but GCC 4.x sources rely on legacy
+# semantics (e.g. incrementing bools).  Force the host build back to
+# GNU++14 to keep the classic behaviour and avoid build failures with
+# modern toolchains.
+HOST_CXXFLAGS+=	-std=gnu++14
+
 GCCDIST=	${.CURDIR}/../../external/gpl3/${EXTERNAL_GCC_SUBDIR}/dist
 GNUHOSTDIST=	${GCCDIST}
 

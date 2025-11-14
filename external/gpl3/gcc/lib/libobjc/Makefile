@@ -113,6 +113,12 @@ CLEANFILES+=	options.h optionlist
 
 .include <bsd.lib.mk>
 
+.PHONY: objc-incdir
+includes: objc-incdir
+
+objc-incdir:
+	${INSTALL_DIR} -o ${BINOWN} -g ${BINGRP} -m 755 ${DESTDIR}${INCSDIR}
+
 .PATH: ${DIST}/libobjc ${DIST}/libobjc/objc ${DIST}/libobjc/objc-private
 
 .else

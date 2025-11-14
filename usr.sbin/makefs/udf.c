@@ -60,7 +60,11 @@ __RCSID("$NetBSD: udf.c,v 1.17 2015/06/16 23:04:14 christos Exp $");
 #include "makefs.h"
 #include "udf_create.h"
 #include "udf_write.h"
-#include "newfs_udf.h"
+
+#define UDF_META_PERC  20
+#define APP_VERSION_MAIN	0
+#define APP_VERSION_SUB		5
+#define IMPL_NAME		"*NetBSD userland UDF"
 
 #undef APP_NAME
 #define APP_NAME "*NetBSD makefs"
@@ -1384,7 +1388,7 @@ udf_makefs(const char *image, const char *dir, fsnode *root, fsinfo_t *fsopts)
 			"%"PRIu64" KiB, %"PRIu64" MiB\n",
 			(fsopts->size - truncate_len)/1024,
 			(fsopts->size - truncate_len)/1024/1024);
-		ftruncate(fd, truncate_len);
+		ftruncate(fd, (off_t)truncate_len);
 	}
 
 	if (error) {

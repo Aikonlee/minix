@@ -16,5 +16,8 @@ INCSDIR=	/usr/include/g++/tr2
 
 .PATH: ${DIST}/libstdc++-v3/include
 
+incinstall::
+	${INSTALL_DIR} ${DESTDIR}${INCSDIR}
+
 # Get default targets including <bsd.inc.mk>.
 .include <bsd.prog.mk>

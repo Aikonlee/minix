@@ -14,5 +14,9 @@ INCSDIR=	/usr/include/g++/profile
 
 .PATH: ${DIST}/libstdc++-v3/include/profile
 
+incinstall::
+	${INSTALL_DIR} ${DESTDIR}${INCSDIR}
+	${INSTALL_DIR} ${DESTDIR}${INCSDIR}/impl
+
 # Get default targets including <bsd.inc.mk>.
 .include <bsd.prog.mk>

@@ -116,6 +116,7 @@ int	forcelocal;		/* force local operation even if the name
 				 * contains a :
 				 */
 int	secure = 1;		/* don't extract names that contain .. */
+char	*chdname;		/* the dir to change to if not NULL. */
 
 /*
  *	PAX - Portable Archive Interchange
