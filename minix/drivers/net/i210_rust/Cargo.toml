@@ -9,10 +9,6 @@ crate-type = ["staticlib"]
 
 [dependencies]
 
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-opt-level = 2
-lto = true
-panic = "abort"
+[features]
+default = ["std"]
+std = []

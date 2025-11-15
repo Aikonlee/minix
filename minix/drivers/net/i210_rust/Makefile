@@ -4,7 +4,7 @@ PROG=	i210_rust
 SRCS=	i210_wrapper.c
 
 # Build Rust library first
-RUST_TARGET_DIR=	${.CURDIR}/target/release
+RUST_TARGET_DIR=	${.CURDIR}/target/i686-unknown-linux-gnu/release
 RUST_LIB=		${RUST_TARGET_DIR}/libi210_rust.a
 
 FILES=${PROG}.conf
@@ -16,15 +16,9 @@ LDADD+=	-lnetdriver -lsys ${RUST_LIB}
 
 WARNS?= 3
 
-# Build Rust library before linking
-${PROG}: rust-build
+rustlib: ${RUST_LIB}
 
-rust-build: .PHONY
-	cd ${.CURDIR} && cargo build --release
-
-clean: rust-clean
-
-rust-clean: .PHONY
-	cd ${.CURDIR} && cargo clean
+${RUST_LIB}:
+	cargo build --release --target i686-unknown-linux-gnu
 
 .include <minix.service.mk>
