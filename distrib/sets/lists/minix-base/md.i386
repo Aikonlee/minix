@@ -18,6 +18,7 @@
 ./etc/system.conf.d/es1370                              minix-base
 ./etc/system.conf.d/es1371                              minix-base
 ./etc/system.conf.d/fxp                                 minix-base
+./etc/system.conf.d/i210_rust                           minix-base
 ./etc/system.conf.d/ip1000                              minix-base
 ./etc/system.conf.d/lance                               minix-base
 ./etc/system.conf.d/printer                             minix-base
@@ -48,6 +49,7 @@
 ./service/filter                                        minix-base
 ./service/floppy                                        minix-base
 ./service/fxp                                           minix-base
+./service/i210_rust                                     minix-base
 ./service/hgfs                                          minix-base
 ./service/ip1000                                        minix-base
 ./service/lance                                         minix-base

@@ -64,6 +64,13 @@ if [ -z "${targetdir}" ]; then
 	exit 1
 fi
 
+if [ ! -d "${targetdir}" ]; then
+	# Some Minix release flavors (e.g. i386) do not populate binary/kernel.
+	# Treat a missing directory as "nothing to checksum" instead of erroring.
+	echo "${prog}: skipping missing target directory ${targetdir}" >&2
+	exit 0
+fi
+
 cd "${targetdir}"
 pat="$*"
 if [ "${dash_all}" = yes ]; then

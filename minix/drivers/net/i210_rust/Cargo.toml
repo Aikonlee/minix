@@ -10,5 +10,11 @@ crate-type = ["staticlib"]
 [dependencies]
 
 [features]
-default = ["std"]
+default = []
 std = []
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"

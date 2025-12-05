@@ -112,7 +112,6 @@ udf_write_sector(void *sector, uint64_t location)
 	return 0;
 }
 
-
 /* not implemented for files */
 int
 udf_surface_check(void)

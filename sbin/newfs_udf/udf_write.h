@@ -39,6 +39,10 @@
 
 /* prototypes */
 
+int udf_write_sector(void *sector, uint64_t location);
+int udf_surface_check(void);
+int udf_update_trackinfo(struct mmc_discinfo *di, struct mmc_trackinfo *ti);
+
 int udf_write_dscr_virt(union dscrptr *dscr, uint32_t location, uint32_t vpart,
 	uint32_t sects);
 void udf_metadata_alloc(int nblk, struct long_ad *pos);
